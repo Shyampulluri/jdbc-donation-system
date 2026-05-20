@@ -1,2 +1,6 @@
-javac -cp ".;h2.jar" *.java
-java -cp ".;h2.jar" StudentForm
+#!/bin/bash
+# Spring Boot Donation System - Run Script
+# This script runs the Spring Boot application
+
+echo "Starting Donation System..."
+java -jar target/donation-system-1.0.0.jar

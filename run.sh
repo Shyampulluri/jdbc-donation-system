@@ -1,3 +1,4 @@
 ﻿#!/bin/bash
-set -e
-java -jar donation-app.jar
+# Spring Boot Donation System - Run Script (Linux/macOS)
+echo "Starting Donation System..."
+java -jar target/donation-system-1.0.0.jar

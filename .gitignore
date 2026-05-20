@@ -11,9 +11,12 @@ target/
 *.iml
 .vscode/
 .env
+
+# Old Swing Application - DO NOT USE
 StudentForm.java
 StudentForm$1.class
 StudentForm$QRPanel.class
+StudentForm*.class
 DBConnection.java
 DBConnection.class
 h2.jar
@@ -25,3 +28,4 @@ build.sh
 manifest.mf
 qr.png
 sql.sql
+controller

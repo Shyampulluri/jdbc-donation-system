@@ -1,5 +1,7 @@
 ﻿#!/bin/bash
+# Spring Boot Donation System - Build Script (Linux/macOS)
 set -e
-javac -cp ".:h2.jar" DBConnection.java StudentForm.java
-jar --create --file donation-app.jar --manifest manifest.mf DBConnection.class StudentForm.class StudentForm$QRPanel.class
-echo "Built donation-app.jar"
+echo "Building Donation System..."
+mvn clean package
+echo "✅ Build successful!"
+echo "Run with: java -jar target/donation-system-1.0.0.jar"
