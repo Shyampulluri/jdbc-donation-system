@@ -1,15 +1,16 @@
-FROM eclipse-temurin:17-jdk-jammy
-
-RUN apt-get update \
-    && apt-get install -y xvfb \
-    && rm -rf /var/lib/apt/lists/*
+FROM maven:3.9-eclipse-temurin-17 AS builder
 
 WORKDIR /app
+COPY pom.xml .
+RUN mvn dependency:go-offline
 
 COPY . .
+RUN mvn clean package -DskipTests
 
-# Compile with H2 jar on Linux
-RUN javac -cp ".:h2.jar" DBConnection.java StudentForm.java
+FROM eclipse-temurin:17-jdk-jammy
 
-ENV DISPLAY=:99
-CMD ["xvfb-run", "--auto-servernum", "--server-args=-screen 0 1024x768x24", "java", "-cp", ".:h2.jar", "StudentForm"]
+WORKDIR /app
+COPY --from=builder /app/target/donation-system-1.0.0.jar app.jar
+
+EXPOSE 8080
+CMD ["java", "-jar", "app.jar"]
