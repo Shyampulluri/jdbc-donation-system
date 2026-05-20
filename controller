@@ -1,0 +1,8 @@
+@RestController
+public class TestController {
+
+    @GetMapping("/")
+    public String home() {
+        return "App is running in AWS 🚀";
+    }
+}

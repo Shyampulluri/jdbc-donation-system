@@ -3,5 +3,7 @@ CREATE TABLE donations (
     name VARCHAR(50),
     email VARCHAR(50),
     mobile VARCHAR(15),
-    donation DOUBLE
+    donation DOUBLE,
+    payment_method VARCHAR(20),
+    payment_status VARCHAR(20)
 );
