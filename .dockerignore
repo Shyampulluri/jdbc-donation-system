@@ -1,0 +1,8 @@
+*.class
+*.jar
+donationdb.mv.db
+.git
+.gitignore
+build.bat
+run.bat
+README.md
